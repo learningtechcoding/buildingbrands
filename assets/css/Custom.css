@@ -1,0 +1,181 @@
+
+.hiremebtn{
+    padding-block: 6px;
+    padding-inline:30px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background-color: white;
+    transition: 0.3s;
+}
+.hiremebtn:hover{
+    padding-block: 6px;
+    padding-inline:30px;
+    border-radius: 30px;
+    color: white;
+    border: 2px solid  white;
+    background-color: #000000;
+   
+}
+
+.hiremebtn2  .hiremebtn2-p{
+     margin-top:-10px !important;
+}
+.hiremebtn2{
+    border: 2px solid  white ;
+    padding-top: 15px;
+    padding-bottom: 6px !important;
+    padding-inline: 18px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 300 !important;
+    font-size: 16px;
+}
+.hiremebtn2:hover{
+  background-color: white;
+    padding-top: 15px;
+    padding-bottom: 6px !important;
+    padding-inline: 18px;
+    border-radius: 30px;
+    color:#000000;
+    font-size: 16px;
+}
+
+.hiremebtn2:hover >div {
+  
+    background: #000000 !important;
+  
+}
+.checkbox-toggle:hover .menecus{
+    background-color: white !important;
+      
+  }
+  .logomain img{
+    width: 80px;
+  }
+
+  /*###############> Main Banner start <##############*/
+  .mainbannertext h3{
+    font-size: 40px;
+    color: rgba(255, 255, 255,0.8);
+    letter-spacing: 4%;
+    line-height: 120%;
+
+  }
+  .mainbannertext h1{
+    font-size: 90px;
+    color:white;
+    letter-spacing: 4%;
+    line-height: 120%;
+
+  }
+
+
+      /* Animation Classes */
+      .shake-text {
+        display: inline-block;
+        transition: transform 0.1s;
+    }
+
+    .shake-text:hover {
+        animation: shake 2s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px) rotate(-1deg); }
+        75% { transform: translateX(5px) rotate(1deg); }
+    }
+
+
+    /* Ripple container */
+    .ripple {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+
+    }
+
+    /* Ripple effect circle */
+    .ripple-circle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color:rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple-animation 0.8s ease-out;
+        pointer-events: none;
+    }
+
+    /* Animation for ripple */
+    @keyframes ripple-animation {
+        to {
+            transform: scale(15);
+            opacity: 0;
+        }
+    }
+
+
+    /* Head Movement  */
+    .sectionimg-zoom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 70vh;
+
+    }
+
+    #head-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        width: 100%;
+        height: 100%;
+        /* overflow: hidden; */
+    }
+
+    #animated-head {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        transition: transform 0.1s ease-out;
+        transform-origin: center;
+    }
+
+    /* Head Movement  */
+  /*###############> Main Banner End   <##############*/
+
+ 
+
+  @media(max-width:768px)
+  {
+    .mainbannertext h1 {
+        font-size: 60px;
+        color: white;
+        letter-spacing: 4%;
+        line-height: 120%;
+    }
+    .mainbannertext h3 {
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.8);
+        letter-spacing: 4%;
+        line-height: 120%;
+    }
+  }
+  @media(max-width:554px)
+  {
+    .mainbannertext h1 {
+        font-size: 40px;
+        color: white;
+        letter-spacing: 4%;
+        line-height: 120%;
+    }
+    .mainbannertext h3 {
+        font-size: 25px;
+        color: rgba(255, 255, 255, 0.8);
+        letter-spacing: 4%;
+        line-height: 120%;
+    }
+  }
