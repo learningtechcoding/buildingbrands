@@ -223,6 +223,227 @@
   /* 3 Next Sectoin Stat  */
 
 
+/* TV Section Start  */
+    
+.TVMain{
+    background-color: #343234;
+}
+.tv-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+
+
+.tv-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
+    border-radius: 20px;
+    box-shadow: 
+        inset 0 0 50px rgba(0,0,0,0.5),
+        0 20px 40px rgba(0,0,0,0.4);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tv-screen-container {
+    position: relative;
+    width: 90%;
+    height: 75%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+.tv-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tv-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(
+            rgba(18, 16, 16, 0) 50%, 
+            rgba(0, 0, 0, 0.25) 50%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.06),
+            rgba(0, 255, 0, 0.02),
+            rgba(0, 0, 255, 0.06)
+        );
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.tv-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at center,
+        transparent 60%,
+        rgba(0,0,0,0.6) 100%
+    );
+    pointer-events: none;
+    z-index: 3;
+}
+
+#videoPlayer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tv-bottom {
+    position: relative;
+    height: 15%;
+    background: linear-gradient(to bottom, #1a1a1a, #2c2c2c);
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.tv-button {
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 50%;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tv-button:hover {
+    background: #333;
+    transform: scale(1.1);
+}
+
+
+@media(min-width:992px)
+{
+    .tv-speaker {
+        position: absolute;
+        width: 60px;
+        height: 8px;
+        background: #000;
+        bottom: 33px;
+        border-radius: 4px;
+    }
+}
+.tv-speaker {
+    position: absolute;
+    width: 60px;
+    height: 8px;
+    background: #000;
+    bottom: 33px;
+    border-radius: 4px;
+}
+
+.tv-speaker.left {
+    left: 40px;
+}
+
+.tv-speaker.right {
+    right: 40px;
+}
+
+.static-effect {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-radial-gradient(
+            circle at 50% 50%,
+            rgba(0,0,0,0.2),
+            rgba(0,0,0,0.2) 2px,
+            rgba(255,255,255,0.1) 3px,
+            rgba(255,255,255,0.1) 4px
+        );
+    animation: static 0.1s infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes static {
+    0% { background-position: 0 0; }
+    100% { background-position: 50% 50%; }
+}
+
+/* TV Section End  */
+
+
+
+/* Contact Us Page Start  */
+.mainbannertext h4{
+    color:#FFFFFF;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 120%;
+
+
+}
+
+.contactformmain label{
+    font-size: 22px;
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+.contactformmain input{
+    border-radius: 30px;
+    background-color: #F1F1F1;
+
+    padding-block: 12px;
+}
+.contactformmain  textarea{
+    border-radius: 30px;
+    background-color: #F1F1F1;
+}
+
+.sendbtn button{
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    border: 2px solid transparent;
+
+}
+.sendbtn button:hover{
+    background-color:transparent;
+    border-radius: 30px;
+    color: #FFFFFF;
+    border: 2px solid  #FFFFFF;
+
+}
+
+.copyrightt{
+    font-size: 20px;
+    color: #FFFFFF;
+}
+/* Contact Us Page End  */
+
+
   @media(min-width:992px)
   {
     .hell {
@@ -247,6 +468,29 @@
   }
   @media(max-width:768px)
   {
+
+    .mainbannertext h4 {
+
+        font-size: 45px;
+        
+        
+    }
+
+    .tv-container {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+
+    .tv-speaker {
+        position: absolute;
+        width: 30px;
+        height: 8px;
+        background: #000;
+        bottom: 15px;
+        border-radius: 4px;
+    }
+    
 
     .maintypletext h1{
         color: white;
@@ -275,7 +519,7 @@
         font-size: 35px;
       }
     .mainbannertext h1 {
-        font-size: 25px;
+        font-size: 40px;
         color: white;
         letter-spacing: 4%;
         line-height: 120%;
