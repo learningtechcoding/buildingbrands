@@ -586,7 +586,51 @@
         });
       </script>
       
-     
+    
+    <!-- <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+        
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+    <script>
+        console.clear();
+    
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+    
+    let split, tl;
+    
+    const createSplit = () => {
+      split && split.revert();
+      tl && tl.revert();
+      split = new SplitText(".wrapper p", {
+        type: "chars"
+      });
+    
+      tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#textSection",
+            start: "top top",
+            end: "+=100%",
+            pin: true,
+            scrub: 0.75,
+            markers: false
+          }
+        })
+        .set(
+          split.chars,
+          { 
+            color: "#ffffff",
+            stagger: 0.1
+          },
+          0.1
+        );
+    };
+    createSplit();
+    const debouncer = gsap.delayedCall(0.2, createSplit).pause();
+    
+    window.addEventListener("resize", () => debouncer.restart(true));
+    </script> -->
 
     <!--##############> Text Spliting End   <###############-->
 
