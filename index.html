@@ -359,7 +359,7 @@
         <!-- Video Section End  -->
 
         <section class="bg-black" >
-            <div class="container m-0 mx-sm-5 py-5" id="textSection">
+            <div class="container m-0 mx-sm-5 py-5" id="textSection" style="left: 0px !important;">
                 <div class="row">
                     <div class="col-md-4">
 
@@ -545,12 +545,15 @@
                 trigger: "#textSection",
                 start: "15%",
                 end: "+=100%", // Desktop-specific value
-                pin: false,
+                pin: true,
                 scrub: 0.2,
-                markers:  false,
+                markers: false,
               },
             });
+
+            
       
+            
             tl.to(".wrapper p", {
               opacity: 1,
               color: "#ffffff",
@@ -568,9 +571,9 @@
                 trigger: "#textSectiontext",
                 start: "top 30%", // Adjust `start` for mobile
                 end: "+=20%", // Mobile-specific value
-                pin:  false,
+                pin:  true,
                 scrub: 0.3, // Slightly slower scrub for mobile
-                markers: false,
+                markers:false,
               },
             });
       
