@@ -1372,14 +1372,15 @@ nav input {
 
     
 }
+
+
 .about-img {
-    width: 211px;
-    height: 262px;
+    width:100%;
 }
 
 .what-do-img {
-    width: 211px;
-    height: 262px;
+    width: 100%
+ 
 }
 
 .services {
@@ -1387,6 +1388,20 @@ nav input {
     font-weight: 400;
 }
 
+
+
+@media(min-width:768px)
+{
+    .about-img {
+        width: 211px;
+        height: 262px;
+    }
+    
+    .what-do-img {
+        width: 211px;
+        height: 262px;
+    }
+}
 .services-detail {
     font-size: 26px;
     font-weight: 400;
@@ -5949,6 +5964,9 @@ p.blog8-heding a {
 
 @media(max-width:768px)
 {
+
+
+    
     .brand-service-subheading {
         font-size: 18px;
         font-weight: 400;

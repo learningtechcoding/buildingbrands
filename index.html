@@ -44,10 +44,10 @@
                     </div>
 
                     <ul class="top-navbar-title mx-auto  d-none  d-md-flex">
-                        <li class="menu-actives"><a href="index.html">Home</a></li>
-                        <li><a href="">SERVICES</a></li>
-                        <li><a href="">ABOUT US</a></li>
-                        <li><a href="">CONTACT US</a></li>
+                        <li class="menu-actives"><a href="#homesection">Home</a></li>
+                        <li><a href="#textSection">SERVICES</a></li>
+                        <li><a href="#aboutsection">ABOUT US</a></li>
+                        <li><a href="#contactsection">CONTACT US</a></li>
 
 
                     </ul>
@@ -74,11 +74,11 @@
                                             <div class="row sidemenu-main ">
 
                                                 <div class="col-lg-12 side-menu-scroll py-3 ">
-                                                    <div class="heading2 menu-active"><a href="index.html"> HOME</a>
+                                                    <div class="heading2 menu-active"><a href="#homesection"> HOME</a>
                                                     </div>
-                                                    <div class="heading2 "><a href="index.html">SERVICES</a></div>
-                                                    <div class="heading2 "><a href="index.html">ABOUT US </a></div>
-                                                    <div class="heading2 "><a href="index.html">CONTACT US </a></div>
+                                                    <div class="heading2 "><a href="#textSection">SERVICES</a></div>
+                                                    <div class="heading2 "><a href="#aboutsection">ABOUT US </a></div>
+                                                    <div class="heading2 "><a href="#contactsection">CONTACT US </a></div>
 
                                                 </div>
 
@@ -96,35 +96,91 @@
         <!-- ====================================== Main Menu End===================================== -->
 
         <!-- ====================================== Main Banner start===================================== -->
+<section>
+    
+    <main class="mainbannerstart" id="homesection">
 
-        <main class="mainbannerstart">
-
-            <section class="pt-5">
-                <div class="container-fluid">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-6 py-4 py-md-0">
-                            <div class="mainbannertext ">
-                                <h3 data-aos="fade-right">BUILDING <span id="buildingBrands"> BRANDS</span></h3>
-                                <h1 data-aos="fade-up">BEYOND THE <span id="beyondNoise">NOISE.</span></h1>
-                            </div>
+        <section class="pt-5">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 py-4 py-md-0">
+                        <div class="mainbannertext ">
+                            <h3 class="aos-item" data-aos="fade-right">BUILDING <span id="buildingBrands"> BRANDS</span></h3>
+                            <h1 class="aos-item" data-aos="fade-up">BEYOND THE <span id="beyondNoise">NOISE.</span></h1>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Section 2 with the interactive image -->
-            <section id="interactive-section" class="sectionimg-zoom" data-aos="zoom-in">
-                <div id="head-container">
-                    <img src="./assets/images/websiteimg/head.png" alt="Human Head" id="animated-head">
-                </div>
-            </section>
-            <!-- ====================================== Main Banner start===================================== -->
+        <!-- Section 2 with the interactive image -->
+        <section id="interactive-section" class="sectionimg-zoom" data-aos="zoom-in">
+            <div id="head-container">
+                <img src="./assets/images/websiteimg/head.png" alt="Human Head" id="animated-head">
+            </div>
+        </section>
+        <!-- ====================================== Main Banner start===================================== -->
 
-        </main>
+    </main>
+
+</section>
+
+
+<script>
+    // Check screen width and disable AOS for mobile screens
+    function disableAOSOnMobile() {
+        if (window.innerWidth <= 768) { // Adjust breakpoint as needed
+            document.querySelectorAll('.aos-item').forEach(item => {
+                item.removeAttribute('data-aos'); // Remove AOS attributes
+            });
+        }
+    }
+
+    // Run on page load and window resize
+    disableAOSOnMobile();
+    window.addEventListener('resize', disableAOSOnMobile);
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".heading2 a");
+
+        // Add 'menu-active' on click
+        menuItems.forEach(item => {
+            item.addEventListener("click", () => {
+                menuItems.forEach(i => i.parentElement.classList.remove("menu-active"));
+                item.parentElement.classList.add("menu-active");
+            });
+        });
+
+        // Add 'menu-active' on scroll
+        const sections = Array.from(menuItems).map(item => {
+            return document.querySelector(item.getAttribute("href"));
+        });
+
+        window.addEventListener("scroll", () => {
+            let currentSection = null;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100; // Adjust for fixed header
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+
+            menuItems.forEach(item => {
+                item.parentElement.classList.remove("menu-active");
+                if (item.getAttribute("href") === `#${currentSection}`) {
+                    item.parentElement.classList.add("menu-active");
+                }
+            });
+        });
+    });
+</script>
 
 
 
-        <section>
+
+        <section  >
             <div class="container-fluid mainabout py-5">
                 <canvas id="circleparticles"></canvas>
 
@@ -228,10 +284,18 @@
                     <div class="col-6 col-md-3" data-aos="fade-in">
                         <img src="./assets/images/websiteimg/logo/logo8.png" class="w-75" alt="">
                     </div>
-                    <div class="d-none d-md-block col-md-4"></div>
-                    <div class="col-6 col-md-3 " data-aos="fade-right">
+                    <div class="d-none d-md-block col-md-2"></div>
+                    <div class="col-6 col-md-3 " data-aos="fade-left">
  
                         <img src="./assets/images/websiteimg/logo/logo9.png" class="w-50" alt="">
+                    </div>
+
+                    <div class="col-md-1 ">
+                        <h2 class="text-centers text-white" data-aos="zoom-in" >
+                            AMERICAN
+                            <br>
+                            EXPRESS
+                        </h2>
                     </div>
 
                 </div>
@@ -245,7 +309,7 @@
                         <img src="./assets/images/websiteimg/logo/logo10.png" class="w-75" alt="">
                     </div>
 
-                    <div class="col-6 col-md-3 " data-aos="fade-left">
+                    <div class="col-6 col-md-3 " data-aos="fade-right">
  
                         <img src="./assets/images/websiteimg/logo/logo11.png" class="w-50" alt="">
                     </div>
@@ -294,7 +358,7 @@
         </section>
         <!-- Video Section End  -->
 
-        <section class="bg-black">
+        <section class="bg-black" id="textSection">
             <div class="container m-0 mx-sm-5 py-5">
                 <div class="row">
                     <div class="col-md-4">
@@ -306,19 +370,19 @@
                     </div>
                     
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center " >
                     <div class="col-md-4 d-flex flex-column align-items-center">
                         <h2 class="what-we-do-heading text-white text-center" data-aos="fade-down">WHAT WE DO</h2>
                         <img src="/assets/images/about-us-img.png" alt=""  id="move-header" class="img-fluid what-do-img "  data-aos="zoom-in">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 wrapper" >
                         <div class="row mb-4 " data-aos="fade-up">
-                            <div class="col-sm-4 "><p class="services text-white">BRANDING</p></div>
+                            <div class="col-sm-4 "><p class="services">BRANDING</p></div>
                             <div class=" col-sm-4">
-                               <p class="services-detail text-white"> STRATEGY CREATIVE DIRECTION LOGO DESIGN VISUAL IDENTITY</p>
+                               <p class="services-detail "> STRATEGY CREATIVE DIRECTION LOGO DESIGN VISUAL IDENTITY</p>
                             </div>
                             <div class=" col-sm-4">
-                               <p class="services-detail text-white"> COPYWRITING CONTENT CREATION VISUAL DESIGN brand
+                               <p class="services-detail "> COPYWRITING CONTENT CREATION VISUAL DESIGN brand
                                 experiences</p>
                             </div>
                         </div>
@@ -355,7 +419,7 @@
 
      
 
-        <section class="bg-white ">
+        <section class="bg-white " id="aboutsection">
             <div class="container">
                 <div class="row py-5">
                     <div class="col-md-9">
@@ -387,7 +451,7 @@
        
 
 
-        <section>
+        <section  id="contactsection">
             <div class="container-fluid pt-5">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-7">
@@ -431,6 +495,10 @@
 
 
 
+
+
+
+
         <!-- ====================================== Progress Scroll Bottom To Top ===================================== -->
         <div class="progress-wrap cursor-pointer">
             <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -439,6 +507,64 @@
         </div>
         <!-- ====================================== Progress Scroll Bottom To Top End ===================================== -->
     </div>
+
+
+
+
+
+    <!--##############> Text Spliting start <###############-->
+    
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+        
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+    <script>
+        console.clear();
+    
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+    
+    let split, tl;
+    
+    const createSplit = () => {
+      split && split.revert();
+      tl && tl.revert();
+      split = new SplitText(".wrapper p", {
+        type: "chars"
+      });
+    
+      tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#textSection",
+            start: "top top",
+            end: "+=100%",
+            pin: true,
+            scrub: 0.75,
+            markers: false
+          }
+        })
+        .set(
+          split.chars,
+          { 
+            color: "#ffffff",
+            stagger: 0.1
+          },
+          0.1
+        );
+    };
+    createSplit();
+    const debouncer = gsap.delayedCall(0.2, createSplit).pause();
+    
+    window.addEventListener("resize", () => debouncer.restart(true));
+    </script>
+
+    <!--##############> Text Spliting End   <###############-->
+
+
+    <!-- Scroll animation text start  -->
+     
+    <!-- Scroll animation text  End-->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script src="assets/javascript/jquery.min.js"></script>
@@ -574,6 +700,39 @@
     </script>
 
 
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll(".top-navbar-title li");
+
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: "0px",
+        threshold: 0.3// Trigger when 50% of the section is in view
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            if (entry.isIntersecting) {
+                // Remove active class from all nav items
+                navItems.forEach((item) => item.classList.remove("menu-actives"));
+
+                // Add active class to the corresponding nav item
+                document
+                    .querySelector(`.top-navbar-title li a[href="#${id}"]`)
+                    .parentElement.classList.add("menu-actives");
+            }
+        });
+    }, options);
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+});
+
+</script>
 
 
 </body>
