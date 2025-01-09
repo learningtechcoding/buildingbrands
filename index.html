@@ -358,8 +358,8 @@
         </section>
         <!-- Video Section End  -->
 
-        <section class="bg-black" id="textSection">
-            <div class="container m-0 mx-sm-5 py-5">
+        <section class="bg-black" >
+            <div class="container m-0 mx-sm-5 py-5" id="textSection">
                 <div class="row">
                     <div class="col-md-4">
 
@@ -370,12 +370,12 @@
                     </div>
                     
                 </div>
-                <div class="row justify-content-center " >
+                <div class="row justify-content-center ">
                     <div class="col-md-4 d-flex flex-column align-items-center">
                         <h2 class="what-we-do-heading text-white text-center" data-aos="fade-down">WHAT WE DO</h2>
                         <img src="/assets/images/about-us-img.png" alt=""  id="move-header" class="img-fluid what-do-img "  data-aos="zoom-in">
                     </div>
-                    <div class="col-md-8 wrapper" >
+                    <div class="col-md-8 wrapper py-5"  id="textSectiontext">
                         <div class="row mb-4 " data-aos="fade-up">
                             <div class="col-sm-4 "><p class="services">BRANDING</p></div>
                             <div class=" col-sm-4">
@@ -529,79 +529,64 @@
             element.appendChild(span);
           });
         }
-    
+      
         // Call the function to split text
         splitText('.wrapper p');
-    
+      
         // GSAP Animation with ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
-    
-        const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#textSection",
-    start: "top top",
-    end: "+=250%",
-    pin: true,
-    scrub: 0.2, // Faster scrub for quicker response
-    markers: false,
-  },
-});
-
-tl.to(".wrapper  p", {
-  opacity: 1,
-  color: "#ffffff",
-  y: 0,
-  stagger: 0.03, // Smaller value for faster group splitting
-  duration: 0.3, // Shorter animation duration
-  ease: "power2.out", // Smooth easing for fast split effect
-});
-
-      </script>
-    
-    <!-- <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-        
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    
-    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
-    <script>
-        console.clear();
-    
-    gsap.registerPlugin(SplitText, ScrollTrigger);
-    
-    let split, tl;
-    
-    const createSplit = () => {
-      split && split.revert();
-      tl && tl.revert();
-      split = new SplitText(".wrapper p", {
-        type: "chars"
-      });
-    
-      tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#textSection",
-            start: "top top",
-            end: "+=100%",
-            pin: true,
-            scrub: 0.75,
-            markers: false
-          }
-        })
-        .set(
-          split.chars,
-          { 
-            color: "#ffffff",
-            stagger: 0.1
+      
+        // Define responsive animations
+        ScrollTrigger.matchMedia({
+          // Desktop settings
+          "(min-width: 768px)": function () {
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: "#textSection",
+                start: "15%",
+                end: "+=100%", // Desktop-specific value
+                pin: false,
+                scrub: 0.2,
+                markers:  false,
+              },
+            });
+      
+            tl.to(".wrapper p", {
+              opacity: 1,
+              color: "#ffffff",
+              y: 0,
+              stagger: 0.03, // Faster group splitting
+              duration: 0.3, // Short animation
+              ease: "power2.out",
+            });
           },
-          0.1
-        );
-    };
-    createSplit();
-    const debouncer = gsap.delayedCall(0.2, createSplit).pause();
-    
-    window.addEventListener("resize", () => debouncer.restart(true));
-    </script> -->
+      
+          // Mobile settings
+          "(max-width: 767px)": function () {
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: "#textSectiontext",
+                start: "top 30%", // Adjust `start` for mobile
+                end: "+=20%", // Mobile-specific value
+                pin:  false,
+                scrub: 0.3, // Slightly slower scrub for mobile
+                markers: false,
+              },
+            });
+      
+            tl.to(".wrapper p", {
+              opacity: 1,
+              color: "#ffffff",
+              y: 1, // Adjust `y` for mobile (slightly offset)
+              stagger: 0.05, // Slightly slower stagger
+              duration: 0.4, // Slightly longer animation for mobile
+              ease: "power2.out",
+            });
+          },
+        });
+      </script>
+      
+     
 
     <!--##############> Text Spliting End   <###############-->
 
