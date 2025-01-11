@@ -22,9 +22,9 @@ document.addEventListener('mousemove', function(e) {
         
 
         const isMobile = window.innerWidth <= 768;
-        // Adjust the movement sensitivity (higher values will reduce movement)
-        const moveAmountX = isMobile ? 0 : (mouseX / window.innerWidth) * 70 - 10; // Disable horizontal movement on mobile
-        const moveAmountY = (mouseY / window.innerHeight) * 70 - 10; // Vertical movement remains the same
+       
+        const moveAmountX = isMobile ? 0 : (mouseX / window.innerWidth) * 70 - 10;  
+        const moveAmountY = (mouseY / window.innerHeight) * 70 - 10;  
         
         moveHeader.style.transform = `translate(${moveAmountX}px, ${moveAmountY}px)`;
         });
