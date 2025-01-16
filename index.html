@@ -20,6 +20,21 @@
     <link rel="stylesheet" href="./assets/css/Custom.css">
 
 
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js"></script>
+
+<style>
+  
+   .spline-container{
+    height: 60vh;
+   }
+   .pin-spacer{
+    left: 0px !important;
+   }
+   #textSection{
+    left: 48px !important;
+   
+   }
+</style>
 </head>
 
 <body>
@@ -117,13 +132,19 @@
         <section id="interactive-section" class="sectionimg-zoom" data-aos="zoom-in">
             <div id="head-container">
 
-                <iframe
+                <!-- <iframe
                 src="https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/" 
                 frameborder="0" 
                 width="100%" 
                 height="100%"
                 id="animated-head">
-        </iframe>
+        </iframe> -->
+
+
+        <div class="spline-container">
+            <spline-viewer url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
+          </div>
+        <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
                 <!-- <img src="./assets/images/websiteimg/head.png" alt="Human Head" id="animated-head"> -->
             </div>
         </section>
@@ -383,13 +404,12 @@
                         <h2 class="what-we-do-heading text-white text-center" data-aos="fade-down">WHAT WE DO</h2>
                         <!-- <img src="/assets/images/about-us-img.png" alt=""  id="move-header" class="img-fluid what-do-img "  data-aos="zoom-in"> -->
 
-                        <iframe
-                        src="https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/" 
-                        frameborder="0" 
-                        width="80%" 
-                        height="100%"
-                        id="animated-head">
-                </iframe>
+           
+
+                        <div class="spline-container">
+                            <spline-viewer url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
+                          </div>
+                <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
                     </div>
                     <div class="col-md-8 wrapper pt-md-5 pt-5"  id="textSectiontext">
                         <div class="row mb-4 " data-aos="fade-up">
@@ -438,7 +458,7 @@
         <section class="bg-white " id="aboutsection">
             <div class="container">
                 <div class="row py-5">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <h1 class="about-us-heading text-center d-md-none d-block" data-aos="fade-down">ABOUT US</h1>
                         <h3 class="self-taught" data-aos="fade-up">
                             <span>with early roots in the music industry - running campaigns and digital experiences for
@@ -451,19 +471,16 @@
                             <span>that</span> ensure scalability and consistency worldwide.
                         </h3>
                     </div>
-                    <div class="col-md-3 d-flex flex-column align-items-center">
+                    <div class="col-md-4 d-flex flex-column align-items-center">
                         <h1 class="about-us-heading d-none d-md-block aos-animate" data-aos="fade-up">ABOUT US</h1>
+ 
 
-                        <iframe
-                        src="https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/" 
-                        frameborder="0" 
-                        width="100%" 
-                        height="100%"
-                        id="headmovement"
-                        >
-                </iframe>
-                        <!-- <img src="/assets/images/about-us-img.png" alt="" class="img-fluid about-img "  id="headmovement" data-aos="zoom-in"> -->
-                    </div>
+                        <div class="spline-container">
+                            <spline-viewer url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
+                          </div>
+                <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
+                    
+            </div>
                 </div>
             </div>
         </section>
@@ -572,7 +589,7 @@
                 end: "+=100%", // Desktop-specific value
                 pin: true,
                 scrub: 0.2,
-                markers: false,
+                markers:false,
               },
             });
 
@@ -615,53 +632,7 @@
       </script>
       
     
-    <!-- <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-        
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    
-    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
-    <script>
-        console.clear();
-    
-    gsap.registerPlugin(SplitText, ScrollTrigger);
-    
-    let split, tl;
-    
-    const createSplit = () => {
-      split && split.revert();
-      tl && tl.revert();
-      split = new SplitText(".wrapper p", {
-        type: "chars"
-      });
-    
-      tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#textSection",
-            start: "top top",
-            end: "+=100%",
-            pin: true,
-            scrub: 0.75,
-            markers: false
-          }
-        })
-        .set(
-          split.chars,
-          { 
-            color: "#ffffff",
-            stagger: 0.1
-          },
-          0.1
-        );
-    };
-    createSplit();
-    const debouncer = gsap.delayedCall(0.2, createSplit).pause();
-    
-    window.addEventListener("resize", () => debouncer.restart(true));
-    </script> -->
-
-    <!--##############> Text Spliting End   <###############-->
-
+     
 
     <!-- Scroll animation text start  -->
      
