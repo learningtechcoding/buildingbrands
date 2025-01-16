@@ -22,19 +22,20 @@
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js"></script>
 
-<style>
-  
-   .spline-container{
-    height: 60vh;
-   }
-   .pin-spacer{
-    left: 0px !important;
-   }
-   #textSection{
-    left: 48px !important;
-   
-   }
-</style>
+    <style>
+        .spline-container {
+            height: 60vh;
+        }
+
+        .pin-spacer {
+            left: 0px !important;
+        }
+
+        #textSection {
+            left: 48px !important;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -93,7 +94,8 @@
                                                     </div>
                                                     <div class="heading2 "><a href="#textSection">SERVICES</a></div>
                                                     <div class="heading2 "><a href="#aboutsection">ABOUT US </a></div>
-                                                    <div class="heading2 "><a href="#contactsection">CONTACT US </a></div>
+                                                    <div class="heading2 "><a href="#contactsection">CONTACT US </a>
+                                                    </div>
 
                                                 </div>
 
@@ -111,28 +113,30 @@
         <!-- ====================================== Main Menu End===================================== -->
 
         <!-- ====================================== Main Banner start===================================== -->
-<section>
-    
-    <main class="mainbannerstart" id="homesection">
+        <section>
 
-        <section class="pt-3 pt-md-5">
-            <div class="container-fluid">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-6 py-4 py-md-0">
-                        <div class="mainbannertext text-center text-md-start ">
-                            <h3 class="aos-item" data-aos="fade-right">BUILDING <span id="buildingBrands"> BRANDS</span></h3>
-                            <h1 class="aos-item" data-aos="fade-up">BEYOND THE <span id="beyondNoise">NOISE.</span></h1>
+            <main class="mainbannerstart" id="homesection">
+
+                <section class="pt-3 pt-md-5">
+                    <div class="container-fluid">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-6 py-4 py-md-0">
+                                <div class="mainbannertext text-center text-lg-start ">
+                                    <h3 class="aos-item" data-aos="fade-right">BUILDING <span id="buildingBrands">
+                                            BRANDS</span></h3>
+                                    <h1 class="aos-item" data-aos="fade-up">BEYOND THE <span
+                                            id="beyondNoise">NOISE.</span></h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Section 2 with the interactive image -->
-        <section id="interactive-section" class="sectionimg-zoom" data-aos="zoom-in">
-            <div id="head-container">
+                <!-- Section 2 with the interactive image -->
+                <section id="interactive-section" class="sectionimg-zoom" data-aos="zoom-in">
+                    <div id="head-container">
 
-                <!-- <iframe
+                        <!-- <iframe
                 src="https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/" 
                 frameborder="0" 
                 width="100%" 
@@ -141,75 +145,76 @@
         </iframe> -->
 
 
-        <div class="spline-container">
-            <spline-viewer url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
-          </div>
-        <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
-                <!-- <img src="./assets/images/websiteimg/head.png" alt="Human Head" id="animated-head"> -->
-            </div>
+                        <div class="spline-container">
+                            <spline-viewer
+                                url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
+                        </div>
+                        <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
+                        <!-- <img src="./assets/images/websiteimg/head.png" alt="Human Head" id="animated-head"> -->
+                    </div>
+                </section>
+                <!-- ====================================== Main Banner start===================================== -->
+
+            </main>
+
         </section>
-        <!-- ====================================== Main Banner start===================================== -->
-
-    </main>
-
-</section>
 
 
-<script>
-    // Check screen width and disable AOS for mobile screens
-    function disableAOSOnMobile() {
-        if (window.innerWidth <= 768) { // Adjust breakpoint as needed
-            document.querySelectorAll('.aos-item').forEach(item => {
-                item.removeAttribute('data-aos'); // Remove AOS attributes
-            });
-        }
-    }
-
-    // Run on page load and window resize
-    disableAOSOnMobile();
-    window.addEventListener('resize', disableAOSOnMobile);
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuItems = document.querySelectorAll(".heading2 a");
-
-        // Add 'menu-active' on click
-        menuItems.forEach(item => {
-            item.addEventListener("click", () => {
-                menuItems.forEach(i => i.parentElement.classList.remove("menu-active"));
-                item.parentElement.classList.add("menu-active");
-            });
-        });
-
-        // Add 'menu-active' on scroll
-        const sections = Array.from(menuItems).map(item => {
-            return document.querySelector(item.getAttribute("href"));
-        });
-
-        window.addEventListener("scroll", () => {
-            let currentSection = null;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100; // Adjust for fixed header
-                if (window.scrollY >= sectionTop) {
-                    currentSection = section.getAttribute("id");
+        <script>
+            // Check screen width and disable AOS for mobile screens
+            function disableAOSOnMobile() {
+                if (window.innerWidth <= 768) { // Adjust breakpoint as needed
+                    document.querySelectorAll('.aos-item').forEach(item => {
+                        item.removeAttribute('data-aos'); // Remove AOS attributes
+                    });
                 }
+            }
+
+            // Run on page load and window resize
+            disableAOSOnMobile();
+            window.addEventListener('resize', disableAOSOnMobile);
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuItems = document.querySelectorAll(".heading2 a");
+
+                // Add 'menu-active' on click
+                menuItems.forEach(item => {
+                    item.addEventListener("click", () => {
+                        menuItems.forEach(i => i.parentElement.classList.remove("menu-active"));
+                        item.parentElement.classList.add("menu-active");
+                    });
+                });
+
+                // Add 'menu-active' on scroll
+                const sections = Array.from(menuItems).map(item => {
+                    return document.querySelector(item.getAttribute("href"));
+                });
+
+                window.addEventListener("scroll", () => {
+                    let currentSection = null;
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop - 100; // Adjust for fixed header
+                        if (window.scrollY >= sectionTop) {
+                            currentSection = section.getAttribute("id");
+                        }
+                    });
+
+                    menuItems.forEach(item => {
+                        item.parentElement.classList.remove("menu-active");
+                        if (item.getAttribute("href") === `#${currentSection}`) {
+                            item.parentElement.classList.add("menu-active");
+                        }
+                    });
+                });
             });
-
-            menuItems.forEach(item => {
-                item.parentElement.classList.remove("menu-active");
-                if (item.getAttribute("href") === `#${currentSection}`) {
-                    item.parentElement.classList.add("menu-active");
-                }
-            });
-        });
-    });
-</script>
+        </script>
 
 
 
 
-        <section  >
+        <section>
             <div class="container-fluid mainabout py-2 py-md-5">
                 <canvas id="circleparticles"></canvas>
 
@@ -241,9 +246,9 @@
             <canvas id="sky"></canvas>
             <div class="container py-3 py-md-5">
                 <div class="row d-flex justify-content-center">
- 
+
                     <div class="col-md-3" data-aos="zoom-in">
- 
+
                         <img src="./assets/images/websiteimg/logo/logo1.png" class="w-100" alt="">
                     </div>
                 </div>
@@ -252,7 +257,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-1"></div>
                     <div class="col-6 col-md-3">
- 
+
                         <img src="./assets/images/websiteimg/logo/logo2.png" class="w-75" alt="" data-aos="fade-right">
                     </div>
                     <div class="col-md-3"></div>
@@ -260,7 +265,7 @@
                         <img src="./assets/images/websiteimg/logo/logo3.png" class="w-75" alt="" data-aos="zoom-in">
                     </div>
                     <div class=" col-6 col-md-2 d-flex justify-content-center" data-aos="fade-left">
- 
+
                         <img src="./assets/images/websiteimg/logo/logo4.png" class="w-50" alt="">
 
                     </div>
@@ -270,9 +275,9 @@
 
                 <!-- sigle logo  -->
                 <div class="row">
- 
+
                     <div class="col-6 col-md-2" data-aos="fade-right">
- 
+
                         <img src="./assets/images/websiteimg/logo/logo5.png" class="w-75" alt="">
 
                     </div>
@@ -283,21 +288,21 @@
 
                 <!-- 3 logos start  -->
                 <div class="row py-5">
- 
+
                     <div class="col-6  col-md-2 pt-3 pb-4 pb-md-0 pt-md-5" data-aos="fade-right">
                         <img src="./assets/images/websiteimg/logo/logo6.png" class="w-75" alt="">
 
                     </div>
                     <div class="order-2  col-12 col-md-8" data-aos="fade-up">
- 
+
 
                         <div class="maintypletext">
                             <h1 class="typletext"></h1>
                         </div>
                     </div>
- 
+
                     <div class="col-6 order-md-3 col-md-2 pt-3 pb-4 pb-md-0 pt-md-5 " data-aos="fade-left">
- 
+
                         <img src="./assets/images/websiteimg/logo/logo7.png" class="w-75" alt="">
 
                     </div>
@@ -309,18 +314,18 @@
                 <!-- three logos  -->
                 <div class="row d-flex justify-content-center pt-3">
                     <div class="col-md-1"></div>
- 
+
                     <div class="col-6 col-md-3" data-aos="fade-in">
                         <img src="./assets/images/websiteimg/logo/logo8.png" class="w-75" alt="">
                     </div>
                     <div class="d-none d-md-block col-md-2"></div>
                     <div class="col-6 col-md-3 " data-aos="fade-left">
- 
+
                         <img src="./assets/images/websiteimg/logo/logo9.png" class="w-50" alt="">
                     </div>
 
                     <div class="col-md-1 ">
-                        <h2 class="text-centers text-white" data-aos="zoom-in" >
+                        <h2 class="text-centers text-white" data-aos="zoom-in">
                             AMERICAN
                             <br>
                             EXPRESS
@@ -333,13 +338,13 @@
                 <!-- three logos  -->
                 <div class="row d-flex justify-content-center py-3">
                     <div class="col-md-3"></div>
- 
+
                     <div class="col-6 col-md-3 " data-aos="fade-right">
                         <img src="./assets/images/websiteimg/logo/logo10.png" class="w-75" alt="">
                     </div>
 
                     <div class="col-6 col-md-3 " data-aos="fade-right">
- 
+
                         <img src="./assets/images/websiteimg/logo/logo11.png" class="w-50" alt="">
                     </div>
 
@@ -354,9 +359,9 @@
 
 
 
-         <!-- Video Section Start  -->
+        <!-- Video Section Start  -->
 
-         <section class="TVMain">
+        <section class="TVMain">
             <div class="container">
                 <div class="row py-5 d-flex justify-content-center">
                     <div class="col-md-7">
@@ -387,39 +392,44 @@
         </section>
         <!-- Video Section End  -->
 
-        <section class="bg-black" >
-            <div class="container m-0 mx-sm-5 py-3 py-md-5" id="textSection" style="left: 0px !important;">
+        <section class="bg-black">
+            <div class="container m-0 mx-auto py-3 py-md-5" id="textSection" style="left: 0px !important;">
                 <div class="row">
                     <div class="col-md-4">
 
                     </div>
-                    <div class=" col-md-8 py-3 py-md-5 text-center">
-                        <h2 class="text-uppercase m-0 p-0 text-white brand-service-heading" data-aos="fade-up" >Full service brand partner</h2>
-                        <p class="text-uppercase m-0 p-0 text-white brand-service-subheading" data-aos="fade-down">because brand is where every sale begins</p>
+                    <div class=" col-lg-8 py-3 py-md-5 text-center">
+                        <h2 class="text-uppercase m-0 p-0 text-white brand-service-heading" data-aos="fade-up">Full
+                            service brand partner</h2>
+                        <p class="text-uppercase m-0 p-0 text-white brand-service-subheading" data-aos="fade-down">
+                            because brand is where every sale begins</p>
                     </div>
-                    
+
                 </div>
                 <div class="row justify-content-center ">
-                    <div class="col-md-4 d-flex flex-column align-items-center">
+                    <div class="col-lg-4 d-flex flex-column align-items-center">
                         <h2 class="what-we-do-heading text-white text-center" data-aos="fade-down">WHAT WE DO</h2>
                         <!-- <img src="/assets/images/about-us-img.png" alt=""  id="move-header" class="img-fluid what-do-img "  data-aos="zoom-in"> -->
 
-           
+
 
                         <div class="spline-container">
-                            <spline-viewer url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
-                          </div>
-                <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
+                            <spline-viewer
+                                url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
+                        </div>
+                        <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
                     </div>
-                    <div class="col-md-8 wrapper pt-md-5 pt-5"  id="textSectiontext">
+                    <div class="col-lg-8 wrapper pt-md-5  pb-5 " id="textSectiontext">
                         <div class="row mb-4 " data-aos="fade-up">
-                            <div class="col-sm-4 "><p class="services">BRANDING</p></div>
-                            <div class=" col-sm-4">
-                               <p class="services-detail "> STRATEGY CREATIVE DIRECTION LOGO DESIGN VISUAL IDENTITY</p>
+                            <div class="col-sm-4 ">
+                                <p class="services">BRANDING</p>
                             </div>
                             <div class=" col-sm-4">
-                               <p class="services-detail "> COPYWRITING CONTENT CREATION VISUAL DESIGN brand
-                                experiences</p>
+                                <p class="services-detail "> STRATEGY CREATIVE DIRECTION LOGO DESIGN VISUAL IDENTITY</p>
+                            </div>
+                            <div class=" col-sm-4">
+                                <p class="services-detail "> COPYWRITING CONTENT CREATION VISUAL DESIGN brand
+                                    experiences</p>
                             </div>
                         </div>
                         <div class="row mb-4" data-aos="fade-up">
@@ -427,7 +437,8 @@
                                 <p class="services">SOCIAL MEDIA</p>
                             </div>
                             <div class="col-sm-4">
-                                <p class="services-detail">CONTENT STRATEGY TONE OF VOICE BRAND IDENTITY ACCOUNT MANAGEMENt</p>
+                                <p class="services-detail">CONTENT STRATEGY TONE OF VOICE BRAND IDENTITY ACCOUNT
+                                    MANAGEMENt</p>
                             </div>
                             <div class="col-sm-4">
 
@@ -445,7 +456,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
 
             </div>
@@ -453,13 +464,13 @@
 
 
 
-     
+
 
         <section class="bg-white " id="aboutsection">
             <div class="container">
                 <div class="row py-5">
-                    <div class="col-md-8">
-                        <h1 class="about-us-heading text-center d-md-none d-block" data-aos="fade-down">ABOUT US</h1>
+                    <div class="col-lg-8">
+                        <h1 class="about-us-heading text-center d-lg-none d-block" data-aos="fade-down">ABOUT US</h1>
                         <h3 class="self-taught" data-aos="fade-up">
                             <span>with early roots in the music industry - running campaigns and digital experiences for
                                 some of the largest musicians in the world -</span> bobbalam studios <span>has expanded
@@ -471,59 +482,59 @@
                             <span>that</span> ensure scalability and consistency worldwide.
                         </h3>
                     </div>
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <h1 class="about-us-heading d-none d-md-block aos-animate" data-aos="fade-up">ABOUT US</h1>
- 
+                    <div class="col-lg-4 d-flex flex-column align-items-center">
+                        <h1 class="about-us-heading d-none d-lg-block aos-animate" data-aos="fade-up">ABOUT US</h1>
+
 
                         <div class="spline-container">
-                            <spline-viewer url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
-                          </div>
-                <!-- <iframe src='https://my.spline.design/head-56552a57638a95fb2d4b44f3b6367bd3/' frameborder='0' width='100%' height='100%'></iframe> -->
-                    
-            </div>
+                            <spline-viewer
+                                url="https://prod.spline.design/0K8eJHrItFQ7xXyq/scene.splinecode"></spline-viewer>
+                        </div>
+                      
+                    </div>
                 </div>
             </div>
         </section>
 
-         
 
 
 
 
-       
 
 
-        <section  id="contactsection">
+
+
+        <section id="contactsection">
             <div class="container-fluid pt-5">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-7">
 
                         <div class="mainbannertext text-center " data-aos="zoom-in">
-                        
+
                             <h4 class="text-wite">TELL US ABOUT YOUR BRAND </h4>
                         </div>
 
                         <form action="" class="contactformmain py-5" data-aos="fade-up">
                             <div class="form-group mb-4 mb-md-5">
                                 <label for="exampleInputEmail1 text-white">E-Mail address</label>
-                                <input type="email" class="form-control " >
-                                
-                              </div>
+                                <input type="email" class="form-control ">
+
+                            </div>
 
 
-                              <div class="form-group mb-4 mb-md-5">
+                            <div class="form-group mb-4 mb-md-5">
                                 <label for="exampleFormControlTextarea1">what you need help with</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
-                              </div>
+                            </div>
 
 
-                              <div class="row d-flex justify-content-center">
-                                <div class="col-md-3">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-6 col-lg-3">
                                     <div class="text-center sendbtn">
                                         <button type="submit" class="btn w-100  px-5">SEND</button>
-                                      </div>
+                                    </div>
                                 </div>
-                              </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -533,7 +544,7 @@
             </div>
         </section>
 
- 
+
 
 
 
@@ -561,81 +572,103 @@
     <script>
         // Function to split text into spans for each character
         function splitText(selector) {
-          const element = document.querySelector(selector);
-          const text = element.textContent;
-          const chars = text.split('');
-          element.innerHTML = ''; // Clear the original text
-          chars.forEach(char => {
-            const span = document.createElement('span');
-            span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
-            element.appendChild(span);
-          });
+            const element = document.querySelector(selector);
+            const text = element.textContent;
+            const chars = text.split('');
+            element.innerHTML = ''; // Clear the original text
+            chars.forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
+                element.appendChild(span);
+            });
         }
-      
+
         // Call the function to split text
         splitText('.wrapper p');
-      
+
         // GSAP Animation with ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
-      
+
         // Define responsive animations
         ScrollTrigger.matchMedia({
-          // Desktop settings
-          "(min-width: 768px)": function () {
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: "#textSection",
-                start: "15%",
-                end: "+=100%", // Desktop-specific value
-                pin: true,
-                scrub: 0.2,
-                markers:false,
-              },
-            });
+            // Desktop settings
+            "(min-width: 992px)": function () {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#textSection",
+                        start: "15%",
+                        end: "+=100%", // Desktop-specific value
+                        pin: true,
+                        scrub: 0.2,
+                        markers: false,
+                    },
+                });
 
-            
-      
-            
-            tl.to(".wrapper p", {
-              opacity: 1,
-              color: "#ffffff",
-              y: 0,
-              stagger: 0.03, // Faster group splitting
-              duration: 0.3, // Short animation
-              ease: "power2.out",
-            });
-          },
-      
-          // Mobile settings
-          "(max-width: 767px)": function () {
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: "#textSectiontext",
-                start: "top 30%", // Adjust `start` for mobile
-                end: "+=20%", // Mobile-specific value
-                pin:  true,
-                scrub: 0.3, // Slightly slower scrub for mobile
-                markers:false,
-              },
-            });
-      
-            tl.to(".wrapper p", {
-              opacity: 1,
-              color: "#ffffff",
-              y: 1, // Adjust `y` for mobile (slightly offset)
-              stagger: 0.05, // Slightly slower stagger
-              duration: 0.4, // Slightly longer animation for mobile
-              ease: "power2.out",
-            });
-          },
+
+
+
+                tl.to(".wrapper p", {
+                    opacity: 1,
+                    color: "#ffffff",
+                    y: 0,
+                    stagger: 0.03, // Faster group splitting
+                    duration: 0.3, // Short animation
+                    ease: "power2.out",
+                });
+            },
+
+            // Mobile settings
+            "(max-width: 992px)": function () {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#textSectiontext",
+                        start: "top 60%", // Adjust `start` for mobile
+                        end: "+=10%", // Mobile-specific value
+                        pin: true,
+                        scrub: 0.3, // Slightly slower scrub for mobile
+                        markers: false,
+                    },
+                });
+
+                tl.to(".wrapper p", {
+                    opacity: 1,
+                    color: "#ffffff",
+                    y: 1, // Adjust `y` for mobile (slightly offset)
+                    stagger: 0.05, // Slightly slower stagger
+                    duration: 0.4, // Slightly longer animation for mobile
+                    ease: "power2.out",
+                });
+            },
+            // Mobile settings
+            "(max-width: 767px)": function () {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#textSectiontext",
+                        start: "top 50%", // Adjust `start` for mobile
+                        end: "+=10%", // Mobile-specific value
+                        pin: true,
+                        scrub: 0.3, // Slightly slower scrub for mobile
+                        markers: false,
+                    },
+                });
+
+                tl.to(".wrapper p", {
+                    opacity: 1,
+                    color: "#ffffff",
+                    y: 1, // Adjust `y` for mobile (slightly offset)
+                    stagger: 0.05, // Slightly slower stagger
+                    duration: 0.4, // Slightly longer animation for mobile
+                    ease: "power2.out",
+                });
+            },
         });
-      </script>
-      
-    
-     
+    </script>
+
+
+
 
     <!-- Scroll animation text start  -->
-     
+
     <!-- Scroll animation text  End-->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
@@ -651,12 +684,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 
     <script src="./assets/javascript/sky.js"></script>
- 
+
     <script src="./assets/javascript/tv.js"></script>
     <script src="./assets/javascript/heroheadanim.js"></script>
- <script src="./assets/javascript/headmovementmouse.js"></script>
- 
-   
+    <script src="./assets/javascript/headmovementmouse.js"></script>
+
+
 
 
     <script>
@@ -750,16 +783,16 @@
         setupShakeText('buildingBrands');
         setupShakeText('beyondNoise');
 
- 
 
-        
+
+
         document.addEventListener('mousemove', function (e) {
             const ripple = document.createElement('div');
             ripple.classList.add('ripple-circle');
 
             // Set ripple position
             ripple.style.left = `${e.clientX + window.scrollX}px`;
-            ripple.style.top =  `${e.clientY + window.scrollY}px`;
+            ripple.style.top = `${e.clientY + window.scrollY}px`;
 
             document.body.appendChild(ripple);
 
@@ -773,38 +806,38 @@
 
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll(".top-navbar-title li");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            const navItems = document.querySelectorAll(".top-navbar-title li");
 
-    const options = {
-        root: null, // Use the viewport as the root
-        rootMargin: "0px",
-        threshold: 0.3// Trigger when 50% of the section is in view
-    };
+            const options = {
+                root: null, // Use the viewport as the root
+                rootMargin: "0px",
+                threshold: 0.3// Trigger when 50% of the section is in view
+            };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            const id = entry.target.getAttribute("id");
-            if (entry.isIntersecting) {
-                // Remove active class from all nav items
-                navItems.forEach((item) => item.classList.remove("menu-actives"));
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const id = entry.target.getAttribute("id");
+                    if (entry.isIntersecting) {
+                        // Remove active class from all nav items
+                        navItems.forEach((item) => item.classList.remove("menu-actives"));
 
-                // Add active class to the corresponding nav item
-                document
-                    .querySelector(`.top-navbar-title li a[href="#${id}"]`)
-                    .parentElement.classList.add("menu-actives");
-            }
+                        // Add active class to the corresponding nav item
+                        document
+                            .querySelector(`.top-navbar-title li a[href="#${id}"]`)
+                            .parentElement.classList.add("menu-actives");
+                    }
+                });
+            }, options);
+
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
         });
-    }, options);
 
-    sections.forEach((section) => {
-        observer.observe(section);
-    });
-});
-
-</script>
+    </script>
 
 
 </body>
