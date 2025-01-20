@@ -81,8 +81,8 @@ class ParticleSystem {
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
         const system = new ParticleSystem(canvas, { x: window.innerWidth, y: window.innerHeight });
-        system.ammount = 100; // Number of particles
-        system.diameter = { min: 4, max: 4 }; // Increased particle size
+        system.ammount = 400; // Number of particles
+        system.diameter = { min: 5, max: 5 }; // Increased particle size
         system.life = { min: 15, max: 20 };
         system.speed = { x: { min: -10, max: 10 }, y: { min: -10, max: 10 } };
         system.init();
