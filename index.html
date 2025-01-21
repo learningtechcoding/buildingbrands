@@ -31,13 +31,28 @@
             left: 0px !important;
         }
 
-        @media(max-width:1600px) {
+
+        /* @media(max-width:1600px) {
             #textSection {
                 left: 48px !important;
 
             }
-        }
+        } */
+@media(min-width:1700px)
+{
+    .aboumainss {
+    position: relative;
+    height: 180vh; /* Full viewport height */
+   
+}
+
+}
+
+ 
+
     </style>
+
+    
 </head>
 
 <body>
@@ -116,9 +131,7 @@
 
         <!-- ====================================== Main Banner start===================================== -->
         <section id="homesection">
-
             <main class="mainbannerstart" id="homesection">
-
                 <section class="pt-3 pt-md-5">
                     <div class="container-fluid">
                         <div class="row d-flex justify-content-center">
@@ -133,8 +146,6 @@
                         </div>
                     </div>
                 </section>
-
-
                 <section id="interactive-section" class="sectionimg-zoom" data-aos="zoom-in">
                     <div id="head-container">
                         <iframe src='https://my.spline.design/head11-76b113a8069694e079a1c0817ca768bd/' frameborder='0'
@@ -364,7 +375,7 @@
             </div>
         </section>
         <!-- Video Section End  -->
-        <section class="bg-black">
+        <section class="bg-black position-relative aboumainss">
             <div class="container m-0 mx-auto py-3 py-md-5" id="textSection" style="left: 0px !important;">
                 <div class="row">
                     <div class="col-md-4">
@@ -506,7 +517,7 @@
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-    <script>
+    <!-- <script>
         // Function to split text into spans for each character
         function splitText(selector) {
             const element = document.querySelector(selector);
@@ -599,7 +610,134 @@
                 });
             },
         });
+    </script> -->
+
+    <script>
+        // Function to split text into spans for each character
+        function splitText(selector) {
+            const element = document.querySelector(selector);
+            const text = element.textContent;
+            const chars = text.split('');
+            element.innerHTML = ''; // Clear the original text
+            chars.forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
+                element.appendChild(span);
+            });
+        }
+    
+        // Call the function to split text
+        splitText('.wrapper p');
+    
+        // GSAP Animation with ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+    
+        // Define responsive animations
+        ScrollTrigger.matchMedia({
+            // Desktop settings
+            "(min-width: 992px)": function () {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#textSection",
+                        start: "15%",
+                        end: "+=50%",
+                        pin: true, // Pin the section
+                        pinSpacing: true, // Prevent layout jump
+                        scrub: 0.5, // Smooth scroll scrub
+                        markers:false,
+                    },
+                });
+    
+                tl.fromTo(
+                    ".wrapper p",
+                    {
+                        opacity: 0,
+                        color: "#000000",
+                        y: 0, // Start below
+                        x: 0, // Start to the left
+                    },
+                    {
+                        opacity: 1,
+                        color: "#ffffff",
+                        y: 0,
+                        x: 0,
+                        stagger: 0.03,
+                        duration: 0.8,
+                        ease: "power3.out", // Smooth easing
+                    }
+                );
+            },
+    
+            // Mobile settings
+            "(max-width: 992px)": function () {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#textSectiontext",
+                        start: "top 60%",
+                        end: "+=10%",
+                        pin: true,
+                        pinSpacing: true,
+                        scrub: 0.5,
+                        markers: false,
+                    },
+                });
+    
+                tl.fromTo(
+                    ".wrapper p",
+                    {
+                        opacity: 0,
+                        color: "#000000",
+                        y: 0,
+                        x: 0,
+                    },
+                    {
+                        opacity: 1,
+                        color: "#ffffff",
+                        y: 0,
+                        x: 0,
+                        stagger: 0.05,
+                        duration: 0.6,
+                        ease: "power3.out",
+                    }
+                );
+            },
+    
+            // Small mobile settings
+            "(max-width: 767px)": function () {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#textSectiontext",
+                        start: "top 50%",
+                        end: "+=10%",
+                        pin: true,
+                        pinSpacing: true,
+                        scrub: 0.5,
+                        markers: false,
+                    },
+                });
+    
+                tl.fromTo(
+                    ".wrapper p",
+                    {
+                        opacity: 0,
+                        color: "#000000",
+                        y: 0,
+                        x: 0,
+                    },
+                    {
+                        opacity: 1,
+                        color: "#ffffff",
+                        y: 0,
+                        x: 0,
+                        stagger: 0.05,
+                        duration: 0.6,
+                        ease: "power3.out",
+                    }
+                );
+            },
+        });
     </script>
+    
 
 
 
